@@ -1,87 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-.container-login {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(57, 61, 80);
-}
-
-.form {
-    width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    background: #fff;
-    border: 1px solid rgb(233, 233, 233);
-    box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
-}
-
-.form h1 {
-    text-align: center;
-    padding: 15px 0px;
-    color: rgb(80, 91, 141);
-    font-weight: 900;
-}
-
-.form h1 strong {
-    background-image: linear-gradient(90deg, rgb(236, 13, 13), yellow, green, rgb(46, 46, 228));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: tomato;
-    -webkit-background-clip: text;
-}
-
-.form .inputs {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.form .inputs label {
-    font-weight: 500;
-    color: rgb(80, 91, 141);
-}
-
-.form .inputs input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    color: rgb(57, 61, 80);
-    font-size: 17px;
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-}
-
-.form .inputs input[type="submit"] {
-    width: 150px;
-    height: 50px;
-    color: white;
-    background: rgb(57, 61, 80);
-    font-size: 17px;
-    font-weight: 100;
-    cursor: pointer;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-}
-
-.form .inputs input[type="submit"]:hover {
-    background: rgb(81, 86, 112);
-}
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .container-login {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(57, 61, 80);
+    }
+    
+    .form {
+        width: 100%;
+        max-width: 500px;
+        padding: 25px;
+        background: #fff;
+        border: 1px solid rgb(233, 233, 233);
+        margin: 20px 10px;
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .logo {
+        text-align: center;
+        padding: 15px 0px;
+        color: rgb(80, 91, 141);
+        font-weight: 900;
+    }
+    
+    .rgb {
+        background-image: linear-gradient(90deg, rgb(236, 13, 13), yellow, green, rgb(46, 46, 228));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: tomato;
+        -webkit-background-clip: text;
+    }
+    
+    .form .inputs {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .form .inputs label {
+        font-weight: 500;
+        color: rgb(80, 91, 141);
+    }
+    
+    .form .inputs input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        color: rgb(57, 61, 80);
+        font-size: 17px;
+        border: 1px solid rgb(212, 212, 212);
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .form .inputs input[type="submit"] {
+        width: 150px;
+        height: 50px;
+        color: white;
+        background: rgb(57, 61, 80);
+        font-size: 17px;
+        font-weight: 100;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .form .inputs input[type="submit"]:hover {
+        background: rgb(81, 86, 112);
+    }
+    /*=================================================================*/
+    /*  MAIN.PHP */
+    
+    header {
+        width: 100%;
+        height: 70px;
+        background: rgb(248, 248, 248);
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+    }
+    
+    header nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+    }
+    
+    .user {
+        font-weight: 900;
+    }
+    
+    .btn-1 {
+        width: 150px;
+        background: rgb(57, 61, 80);
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .btn-2 {
+        width: 150px;
+        background: rgb(199, 18, 18);
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 15px 0px;
+        font-weight: 900;
+        font-size: 17px;
+    }
+    
+    .btn-1:hover {
+        background: rgb(82, 87, 112);
+    }
+    
+    .user {
+        margin-right: 20px;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    
+    .grid section:nth-child(1) {
+        margin: 20px;
+        padding: 40px;
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+    }
+    
+    .table {
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 7px;
+        overflow: hidden;
+        border-collapse: collapse;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .table th {
+        background: rgb(73, 73, 73);
+        padding: 20px 0px;
+        color: white;
+    }
+    
+    .table td {
+        text-align: center;
+        padding: 5px 0px;
+    }
+    
+    .table tbody tr {
+        border-bottom: 1px solid black;
+        margin-bottom: 3px;
+    }
+    
+    .table tbody tr:hover {
+        background: rgb(238, 238, 238);
+    }

@@ -20,14 +20,12 @@ class ConnectionDB {
         if(mysqli_connect_errno()){
             die("Error al conectarse a la base de datos");
         }else{
-            echo "Conectado ... ";
         }
     }
 
     public function Disconnect(): void
     {
         @mysqli_close($this->idConnection);
-        echo "desconectado ... ";
     }
 
     //METODO DE VERIFICACION DE INICIO DE SESION.

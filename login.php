@@ -5,6 +5,8 @@ if($_POST){
     $con = new ConnectionDB();
     if($con->Login($_POST['user'], $_POST['password'])){
         header("Location: ./server/main.php");
+    }else{
+
     }
 }
 ?>
@@ -22,7 +24,7 @@ if($_POST){
 <body>
 <div class="container-login">
     <form class="form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-        <h1> <strong>RGB</strong> System</h1>
+        <h1 class="logo"> <strong class="rgb">RGB</strong> System</h1>
         <div class="inputs">
         <label for="user">Usuario</label>
             <input type="text" name="user" placeholder="Ingresa tu nombre de usuario" autofocus required />
