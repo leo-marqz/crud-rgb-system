@@ -6,6 +6,8 @@ class ConnectionDB {
     private $password = '';
     private $db_name = 'rgb_system';
     public $idConnection;
+    public $name_user = "";
+    public $pass_user = "";
 
     //METODOS DE CONEXION Y DESCONEXION A LA BASE DE DATOS.
     public function Connect(): void
@@ -29,10 +31,10 @@ class ConnectionDB {
     }
 
     //METODO DE VERIFICACION DE INICIO DE SESION.
-    public function Login($user, $password)
+    public function Login()
     {
         $this->Connect();
-        $query = "SELECT * FROM usuarios WHERE usuario = '" . $user . "' AND password = '" . MD5($password) . "' ";
+        $query = "SELECT * FROM usuarios WHERE usuario = '" . $this->name_user . "' AND password = '" . MD5($this->pass_user) . "' ";
         $result = mysqli_query($this->idConnection, $query);
         $nRows = mysqli_num_rows($result);
         $this->Disconnect();
@@ -40,6 +42,16 @@ class ConnectionDB {
             return false;
         }else if($nRows == 1){
             return true;
+        }
+    }
+
+    public function GetName(){
+        $this->Connect();
+        $query = "SELECT nombre FROM usuarios WHERE usuario = '" . $this->name_user . "' AND password = '" . MD5($this->pass_user) . "' ";
+        $result = mysqli_query($this->idConnection, $query);
+        while($rs = mysqli_fetch_array($result)){
+            $this->Disconnect();
+            return $rs['nombre'];
         }
     }
 }

@@ -3,10 +3,12 @@ session_start();
 include("./server/db.php");
 if($_POST){
     $con = new ConnectionDB();
-    if($con->Login($_POST['user'], $_POST['password'])){
+    $con->name_user = $_POST['user'];
+    $con->pass_user = $_POST['password'];
+    if($con->Login()){
+        // echo $con->GetName();
+        $_SESSION['user'] = $con->GetName();
         header("Location: ./server/main.php");
-    }else{
-
     }
 }
 ?>
@@ -17,7 +19,7 @@ if($_POST){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
     <link rel="shorcut icon" type="image/favicon" href="./images/logo.png" />
     <title>Login - RGB_System</title>
 </head>
