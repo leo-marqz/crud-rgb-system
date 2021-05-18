@@ -15,7 +15,7 @@
     <title>RGB_System</title>
 </head>
 
-<body>
+<body >
     <header>
         <nav>
             <h1 class="logo"> <strong class="rgb">RGB</strong> System</h1>
