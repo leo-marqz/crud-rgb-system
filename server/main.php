@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("./db.php");
 ?>
 
 <!DOCTYPE html>
@@ -51,48 +51,10 @@ session_start();
 
                     </thead>
                     <tbody>
-                        <tr class="row">
-                            <td>1</td>
-                            <td>1005</td>
-                            <td>Cafe Listo</td>
-                            <td>50</td>
-                            <td>$4.05</td>
-                        </tr>
-                        <tr class="row">
-                            <td>2</td>
-                            <td>1006</td>
-                            <td>Cafe Musun</td>
-                            <td>3</td>
-                            <td>$1.05</td>
-                        </tr>
-                        <tr class="row">
-                            <td>3</td>
-                            <td>1007</td>
-                            <td>Pan Bimbo</td>
-                            <td>15</td>
-                            <td>$2.00</td>
-                        </tr>
-                        <tr class="row">
-                            <td>4</td>
-                            <td>1008</td>
-                            <td>Cafe Listo</td>
-                            <td>50</td>
-                            <td>$4.05</td>
-                        </tr>
-                        <tr class="row">
-                            <td>5</td>
-                            <td>1009</td>
-                            <td>Arroz Blanco 1lb</td>
-                            <td>100</td>
-                            <td>$0.50</td>
-                        </tr>
-                        <tr class="row">
-                            <td>6</td>
-                            <td>1010</td>
-                            <td>Tiras Led Azules</td>
-                            <td>10</td>
-                            <td>$20.99</td>
-                        </tr>
+                        <?php 
+                          $con = new ConnectionDB();
+                          $con->GetTotalInventory();
+                        ?>
 
                     </tbody>
                 </table>
@@ -105,11 +67,11 @@ session_start();
                         <input type="text" name="user" placeholder="Cafe Listo"  required />
                     </div>
                     <div class="inputs">
-                        <label for="password">Precio c/d ($)</label>
+                        <label for="password">Precio Unidad ($)</label>
                         <input type="password" name="password" placeholder="Ejemplo: 15.50" required />
                     </div>
                     <div class="inputs">
-                        <label for="password">Cantidad</label>
+                        <label for="password">Total Unidades</label>
                         <input type="password" name="text" placeholder="Ejemplo: 15" required />
                     </div>
                     <div class="inputs">
@@ -125,12 +87,12 @@ session_start();
                         <input type="text" name="nombre_producto" id="nombre_producto" placeholder="Palas" required />
                     </div>
                     <div class="inputs">
-                        <label for="password">Precio c/d ($)</label>
-                        <input type="text" name="precio_producto" id="precio_producto" placeholder="Ejemplo: 15.50" required />
+                        <label for="password">Total Unidades</label>
+                        <input type="text" name="cantidad_producto" id="cantidad_producto" placeholder="Ejemplo: 15" required />
                     </div>
                     <div class="inputs">
-                        <label for="password">Cantidad</label>
-                        <input type="text" name="cantidad_producto" id="cantidad_producto" placeholder="Ejemplo: 15" required />
+                        <label for="password">Precio Unidad ($)</label>
+                        <input type="text" name="precio_producto" id="precio_producto" placeholder="Ejemplo: 15.50" required />
                     </div>
                     <div class="inputs">
                         <input type="submit" value="Actualizar" />

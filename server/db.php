@@ -54,6 +54,25 @@ class ConnectionDB {
             return $rs['nombre'];
         }
     }
+
+    public function GetTotalInventory()
+    {
+        $this->Connect();
+        $query = "SELECT * FROM rgb_system.inventario;";
+        $result = mysqli_query($this->idConnection, $query);
+        $x = 1;
+        while($rs = mysqli_fetch_array($result)){
+            echo "<tr class='row'>
+                            <td>" . $x . "</td>
+                            <td>" . $rs["id_producto"] . "</td>
+                            <td>" . $rs["nombre_producto"] . "</td>
+                            <td>" . $rs["unidades_producto"] . "</td>
+                            <td>$" . $rs["precio_producto"] . "</td>
+                        </tr>";
+            $x++;
+        }
+        $this->Disconnect();
+    }
 }
 
 ?>
