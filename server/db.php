@@ -54,7 +54,9 @@ class ConnectionDB {
             return $rs['nombre'];
         }
     }
-
+    
+    //ESTE METODO DEVUELVE LOS PRODUCTOS CON SU ID, NOMBRE, CANTIDAD DE ESTE Y PRECIO UNITARIO
+    //ESTE METODO SE DEBE EJECUTAR DENTRO DE UNA TABLA, EN ESPECIAL LA SECCION TBODY.
     public function GetTotalInventory()
     {
         $this->Connect();
@@ -62,17 +64,59 @@ class ConnectionDB {
         $result = mysqli_query($this->idConnection, $query);
         $x = 1;
         while($rs = mysqli_fetch_array($result)){
+            $url = "/delete.php?id='" . $rs['id_producto'] . "'";
             echo "<tr class='row'>
                             <td>" . $x . "</td>
                             <td>" . $rs["id_producto"] . "</td>
                             <td>" . $rs["nombre_producto"] . "</td>
                             <td>" . $rs["unidades_producto"] . "</td>
                             <td>$" . $rs["precio_producto"] . "</td>
-                        </tr>";
+                 </tr>";
             $x++;
         }
         $this->Disconnect();
     }
+
+    //METODO PARA AGREGAR RODUCTOS A MI BASE DE DATOS
+    public function InsertProduct($product, $units, $price): void
+    {
+        $this->Connect();
+        $query = "INSERT INTO inventario (nombre_producto, unidades_producto, precio_producto) VALUES ('" . $product . "', '" . $units ."', '" . $price . "')";
+        $result = mysqli_query($this->idConnection, $query);
+        $this->Disconnect();
+    }
+
+    public function ProductExists($product_name)
+    {
+        $this->Connect();
+        $query = "SELECT * FROM inventario WHERE nombre_producto='" . $product_name . "' ";
+        $result = mysqli_query($this->idConnection, $query);
+        $rs = mysqli_num_rows($result);
+        if($rs == 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    public function DeleteProduct($id)
+    {
+        // DELETE FROM `rgb_system`.`inventario` WHERE (`id_producto` = '1010');
+        $this->Connect();
+        $query = "DELETE FROM inventario WHERE (id_producto = '" . $id . "')";
+        $rs = mysqli_query($this->idConnection, $query);
+        $this->Disconnect();
+    }
+
+    public function UpdateProduct($nombre_producto, $c_unidades, $p_unidad, $id_producto){
+        $this->Connect();
+        $query = "UPDATE inventario SET nombre_producto='" . $nombre_producto . "', unidades_producto='" . $c_unidades ."', precio_producto='" . $p_unidad . "' WHERE id_producto='". $id_producto . "'";
+        $result = mysqli_query($this->idConnection, $query);
+        $this->Disconnect();
+        return true;
+    }
 }
+
+
 
 ?>

@@ -1,0 +1,301 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .alert {
+        width: 300px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 30%;
+        color: #fff;
+        box-shadow: 2px 2px 10px #000;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .success {
+        background: rgb(39, 136, 0);
+    }
+    
+    .danger {
+        background: rgb(245, 7, 27);
+    }
+    
+    .cerrar {
+        background: rgb(129, 1, 1);
+        color: white;
+        padding: 10px;
+        position: absolute;
+        top: -5;
+        right: -7;
+        cursor: pointer;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    .form {
+        width: 100%;
+        max-width: 500px;
+        padding: 25px;
+        background: #fff;
+        border: 1px solid rgb(233, 233, 233);
+        margin: 20px 10px;
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .logo {
+        text-align: center;
+        padding: 15px 0px;
+        color: rgb(80, 91, 141);
+        font-weight: 900;
+    }
+    
+    .rgb {
+        background-image: linear-gradient(90deg, rgb(236, 13, 13), yellow, green, rgb(46, 46, 228));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: tomato;
+        -webkit-background-clip: text;
+    }
+    
+    .form .inputs {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /* #id_producto { */
+    /* display: none; */
+    /* } */
+    
+    .form .inputs label {
+        font-weight: 500;
+        color: rgb(80, 91, 141);
+    }
+    
+    .in-groups {
+        display: flex;
+        gap: 10px;
+    }
+    
+    #ocultar {
+        width: 20%;
+        position: relative;
+    }
+    
+    #ocultar:before {
+        content: "";
+        /* width: 100%; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0);
+    }
+    
+    .form .inputs input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        width: 100%;
+        padding: 15px;
+        color: rgb(57, 61, 80);
+        font-size: 17px;
+        border: 1px solid rgb(212, 212, 212);
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .form .inputs input[type="submit"] {
+        width: 150px;
+        height: 50px;
+        color: white;
+        background: rgb(57, 61, 80);
+        font-size: 17px;
+        font-weight: 100;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .form .inputs input[type="submit"]:hover {
+        background: rgb(81, 86, 112);
+    }
+    /*=================================================================*/
+    /*  MAIN.PHP */
+    
+    header {
+        width: 100%;
+        height: 70px;
+        background: rgb(248, 248, 248);
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+    }
+    
+    header nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+    }
+    
+    .user {
+        font-weight: 900;
+    }
+    
+    .btn-1 {
+        width: 150px;
+        background: rgb(57, 61, 80);
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .btn-2 {
+        max-width: 150px;
+        text-align: center;
+        background: rgb(199, 18, 18);
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 15px 0px;
+        font-weight: 900;
+        font-size: 17px;
+        border: 2px solid black;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .btn-2:hover {
+        background: rgb(228, 34, 34);
+    }
+    
+    .nav-search {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+    
+    .form-search {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .form-search input[type="search"] {
+        width: 250px;
+        padding: 10px;
+        border-radius: 7px;
+        margin-left: 5px;
+        font-size: 17px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .btn-1:hover {
+        background: rgb(82, 87, 112);
+    }
+    
+    .user {
+        margin-right: 20px;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    
+    .grid section:nth-child(1) {
+        margin: 20px;
+        padding: 40px;
+        border-radius: 7px;
+        box-shadow: 2px 2px 5px rgb(100, 100, 100), 4px 4px 10px rgb(150, 150, 150), 6px 6px 12px rgb(200, 200, 200), 8px 8px 14px rgb(255, 255, 255);
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .table {
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 7px;
+        overflow: hidden;
+        border-collapse: collapse;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+    
+    .table th {
+        background: rgb(73, 73, 73);
+        padding: 20px 0px;
+        color: white;
+    }
+    
+    .table td {
+        text-align: center;
+        padding: 5px 0px;
+    }
+    
+    .delete {
+        padding: 5px 5px;
+        background: rgb(248, 2, 2);
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 57px;
+        -webkit-border-radius: 57px;
+        -moz-border-radius: 57px;
+        -ms-border-radius: 57px;
+        -o-border-radius: 57px;
+    }
+    
+    .table tbody tr {
+        border-bottom: 1px solid black;
+        margin-bottom: 3px;
+    }
+    
+    .table tbody tr:hover {
+        background: rgb(60, 83, 124);
+        color: white;
+    }
