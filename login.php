@@ -19,7 +19,7 @@ if($_POST){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <link rel="stylesheet" type="text/css" href="./css/login_.css" />
     <link rel="shorcut icon" type="image/favicon" href="./images/logo.png" />
     <title>Login - RGB_System</title>
 </head>
@@ -39,6 +39,12 @@ if($_POST){
             <input type="submit" value="Iniciar Sesión" />
         </div>
     </form>
+
 </div>
 </div>
+<footer>
+    <h4>©2021 - Todos los derechos reservados </h4>
+    <div class="logo"><strong class="rgb">RGB</strong> System  <img class="logo-img" src="./images/logo.png" /></div>
+</footer>
+</body>
 </html>

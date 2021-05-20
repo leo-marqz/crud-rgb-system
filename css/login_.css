@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     background: rgb(57, 61, 80);
+    position: relative;
 }
 
 .form {
@@ -92,4 +93,29 @@ input[type="password"] {
 
 .form .inputs input[type="submit"]:hover {
     background: rgb(81, 86, 112);
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -100px;
+    z-index: 5;
+    padding: 20px;
+}
+
+footer h4 {
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+footer .logo .logo-img {
+    width: 30px;
 }
