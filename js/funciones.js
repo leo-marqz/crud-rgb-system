@@ -4,3 +4,7 @@ export function cargarFormularioEditar(data) {
     document.getElementById('cantidad_producto').value = data[3].textContent;
     document.getElementById('precio_producto').value = data[4].textContent.slice(1);
 }
+
+export function cargarFormularioEliminar(data) {
+    document.getElementById('id_eliminar').value = data[1].textContent;
+}

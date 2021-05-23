@@ -1,11 +1,11 @@
-import { cargarFormularioEditar } from './modulo.js';
+import { cargarFormularioEditar, cargarFormularioEliminar } from './funciones.js';
 
 
 const filas = document.querySelectorAll('.row');
 filas.forEach((fila, indice) => {
     fila.addEventListener('click', () => {
         let data = filas[indice].children;
-        console.log(data)
-        cargarFormularioEditar(data)
+        cargarFormularioEditar(data);
+        cargarFormularioEliminar(data);
     });
 });

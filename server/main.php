@@ -83,7 +83,12 @@ if ($_POST) {
             <section>
                 <h1>INVENTARIO</h1>
                 <nav class="nav-search">
-                    <a class="btn-2" id="eliminar">Eliminar</a>
+                    <form class="formulario-eliminar">
+                        <div id="ocultar">
+                            <input type="number" id="id_eliminar" name="id_eliminar" />
+                        </div>
+                        <button type="submit" class="btn-2" id="eliminar">Eliminar</button>
+                    </form>
                     <form class="form-search">
                         <input type="search" placeholder="search" />
                         <input type="submit" class="btn-1" value="Buscar">
@@ -160,7 +165,7 @@ if ($_POST) {
         </div>
     </main>
 
-    <script src="../js/index.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
 </body>
 
 </html>

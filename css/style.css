@@ -98,11 +98,13 @@
     #ocultar {
         width: 20%;
         position: relative;
+        margin: 0px;
+        padding: 0px;
     }
     
     #ocultar:before {
         content: "";
-        /* width: 100%; */
+        width: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -213,6 +215,18 @@
         padding: 5px;
     }
     
+    .formulario-eliminar {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .formulario-eliminar #id_eliminar {
+        max-width: 150px;
+        padding: 10px;
+        margin: 0px;
+    }
+    
     .form-search {
         display: flex;
         gap: 5px;
@@ -261,7 +275,7 @@
     /* estilos para Scroll*/
     
     .secction-table::-webkit-scrollbar {
-        width: 12px;
+        width: 8px;
         background-color: #F5F5F5;
     }
     
