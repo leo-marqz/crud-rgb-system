@@ -254,7 +254,31 @@
         -o-border-radius: 7px;
     }
     
+    .secction-table {
+        max-height: 600px;
+        overflow: auto;
+    }
+    /* estilos para Scroll*/
+    
+    .secction-table::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+    
+    .secction-table::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        background-color: #252525;
+    }
+    
+    .secction-table::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #958f8f;
+        background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+    }
+    
     .table {
+        /* overflow-y: scroll; */
         width: 100%;
         border: 2px solid black;
         border-radius: 7px;
@@ -264,6 +288,11 @@
         -moz-border-radius: 7px;
         -ms-border-radius: 7px;
         -o-border-radius: 7px;
+    }
+    
+    .table .body-table {
+        width: 100%;
+        height: 100%;
     }
     
     .table th {
@@ -288,6 +317,10 @@
         -moz-border-radius: 57px;
         -ms-border-radius: 57px;
         -o-border-radius: 57px;
+    }
+    
+    .table tbody {
+        overflow-y: scroll;
     }
     
     .table tbody tr {
