@@ -2,12 +2,10 @@
 
 include("./db.php");
 $con = new ConnectionDB();
-echo "hola";
-if($_GET){
-    $id = $_GET['id'];
-    echo $id;
+if($_POST){
+    $id = $_POST['id_eliminar'];
     $con->DeleteProduct($id);
-    // header("Location: ./main.php");
+    header("Location: ./main.php");
 }
 
 ?>

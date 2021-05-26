@@ -53,7 +53,7 @@ if ($_POST) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shorcut icon" type="image/favicon" href="../images/logo.png" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css" />
     <title>RGB_System</title>
 </head>
 
@@ -81,9 +81,11 @@ if ($_POST) {
 
         <div class="grid">
             <section>
-                <h1>INVENTARIO</h1>
+                <div class="mini-panel">
+                <h1>INVENTARIO</h1> <a href="./generate_pdf.php" class="btn-1">Generar PDF</a>
+                </div>
                 <nav class="nav-search">
-                    <form class="formulario-eliminar">
+                    <form action="./delete.php" method="POST" class="formulario-eliminar">
                         <div id="ocultar">
                             <input type="number" id="id_eliminar" name="id_eliminar" />
                         </div>

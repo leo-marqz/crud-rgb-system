@@ -54,6 +54,21 @@ class ConnectionDB {
             return $rs['nombre'];
         }
     }
+
+    public function TotalData()
+    {
+        $this->Connect();
+        $data = [];
+        $query = "SELECT * FROM inventario";
+        $result = mysqli_query($this->idConnection, $query);
+        $x = 0;
+        while($rs = mysqli_fetch_array($result)){
+            $data[$x] = $rs;
+            $x++;
+        }
+        $this->Disconnect();
+        return $data;
+    }
     
     //ESTE METODO DEVUELVE LOS PRODUCTOS CON SU ID, NOMBRE, CANTIDAD DE ESTE Y PRECIO UNITARIO
     //ESTE METODO SE DEBE EJECUTAR DENTRO DE UNA TABLA, EN ESPECIAL LA SECCION TBODY.
