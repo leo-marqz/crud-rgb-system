@@ -354,3 +354,9 @@
         color: white;
         cursor: pointer;
     }
+    
+    .empty {
+        width: 100%;
+        font-weight: bold;
+        font-size: 30px;
+    }

@@ -8,6 +8,7 @@ class ConnectionDB {
     public $idConnection;
     public $name_user = "";
     public $pass_user = "";
+    public $search = "";
 
     //METODOS DE CONEXION Y DESCONEXION A LA BASE DE DATOS.
     public function Connect(): void
@@ -70,27 +71,6 @@ class ConnectionDB {
         return $data;
     }
     
-    //ESTE METODO DEVUELVE LOS PRODUCTOS CON SU ID, NOMBRE, CANTIDAD DE ESTE Y PRECIO UNITARIO
-    //ESTE METODO SE DEBE EJECUTAR DENTRO DE UNA TABLA, EN ESPECIAL LA SECCION TBODY.
-    public function GetTotalInventory()
-    {
-        $this->Connect();
-        $query = "SELECT * FROM rgb_system.inventario;";
-        $result = mysqli_query($this->idConnection, $query);
-        $x = 1;
-        while($rs = mysqli_fetch_array($result)){
-            $url = "/delete.php?id='" . $rs['id_producto'] . "'";
-            echo "<tr class='row'>
-                            <td>" . $x . "</td>
-                            <td>" . $rs["id_producto"] . "</td>
-                            <td>" . $rs["nombre_producto"] . "</td>
-                            <td>" . $rs["unidades_producto"] . "</td>
-                            <td>$" . $rs["precio_producto"] . "</td>
-                 </tr>";
-            $x++;
-        }
-        $this->Disconnect();
-    }
 
     //METODO PARA AGREGAR RODUCTOS A MI BASE DE DATOS
     public function InsertProduct($product, $units, $price): void
@@ -129,6 +109,52 @@ class ConnectionDB {
         $result = mysqli_query($this->idConnection, $query);
         $this->Disconnect();
         return true;
+    }
+
+    //ESTE METODO DEVUELVE LOS RESULTADOS SEGUN BUSQUEDA,
+    // PERO SI ESTA VACIO RETORNARA TODOS LOS PRODUCTOS
+    // DE LA BASE DE DATOS Y SI NO EXISTE LANZARA MENSAJE DE QUE NO EXISTE
+    public function Search()
+    {
+        $this->Connect();
+        if($this->search != ""){
+            $query = "SELECT * FROM rgb_system.inventario WHERE nombre_producto LIKE '%" . $this->search . "%' ";
+            $result = mysqli_query($this->idConnection, $query);
+            $rs = mysqli_num_rows($result);
+            if($rs != 0){
+
+                $x = 1;
+                while($rs = mysqli_fetch_array($result)){
+                    $url = "/delete.php?id='" . $rs['id_producto'] . "'";
+                    echo "<tr class='row'>
+                                    <td>" . $x . "</td>
+                                    <td>" . $rs["id_producto"] . "</td>
+                                    <td>" . $rs["nombre_producto"] . "</td>
+                                    <td>" . $rs["unidades_producto"] . "</td>
+                                    <td>$" . $rs["precio_producto"] . "</td>
+                         </tr>";
+                    $x++;
+                }
+            }else{
+                echo "<div class='empty'> No se a encontrado nada </div>";
+            }
+        }else{
+            $query = "SELECT * FROM rgb_system.inventario;";
+        $result = mysqli_query($this->idConnection, $query);
+        $x = 1;
+        while($rs = mysqli_fetch_array($result)){
+            $url = "/delete.php?id='" . $rs['id_producto'] . "'";
+            echo "<tr class='row'>
+                            <td>" . $x . "</td>
+                            <td>" . $rs["id_producto"] . "</td>
+                            <td>" . $rs["nombre_producto"] . "</td>
+                            <td>" . $rs["unidades_producto"] . "</td>
+                            <td>$" . $rs["precio_producto"] . "</td>
+                 </tr>";
+            $x++;
+        }
+        }
+        $this->Disconnect();
     }
 }
 

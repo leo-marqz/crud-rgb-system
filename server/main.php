@@ -2,6 +2,7 @@
 session_start();
 include("./db.php");
 $con = new ConnectionDB();
+$busqueda = "";
 
 
 $productSave = '<div class="alert success">Producto guardado exitosamente <a class="cerrar" onClick="Cerrar()">X</a></div>';
@@ -38,6 +39,12 @@ if ($_POST) {
         if ($con->UpdateProduct($editar_nombre, $editar_unidades, $editar_precio, $id)) {
             echo $update;
         }
+    }
+
+    if(isset($_POST['ejecutar_busqueda'])){
+        $busqueda = $_POST['buscar'];
+        $con->search = $busqueda;
+         
     }
 }
 
@@ -82,7 +89,7 @@ if ($_POST) {
         <div class="grid">
             <section>
                 <div class="mini-panel">
-                <h1>INVENTARIO</h1> <a href="./generate_pdf.php" class="btn-1">Generar PDF</a>
+                <h1>INVENTARIO</h1> <a href="./generate_pdf.php" class="btn-1">Generar Reporte PDF</a>
                 </div>
                 <nav class="nav-search">
                     <form action="./delete.php" method="POST" class="formulario-eliminar">
@@ -91,9 +98,9 @@ if ($_POST) {
                         </div>
                         <button type="submit" class="btn-2" id="eliminar">Eliminar</button>
                     </form>
-                    <form class="form-search">
-                        <input type="search" placeholder="search" />
-                        <input type="submit" class="btn-1" value="Buscar">
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="form-search">
+                        <input type="search" placeholder="Buscar"  name="buscar" value="<?php echo $busqueda; ?>" autofocus />
+                        <input type="submit" name="ejecutar_busqueda"  class="btn-1" value="Buscar">
                     </form>
                 </nav>
                 <table class="table">
@@ -111,7 +118,7 @@ if ($_POST) {
                     <table class="table">
                         <tbody>
                             <div class="body-table">
-                                <?php $con->GetTotalInventory(); ?>
+                                <?php $con->Search(); ?>
                             </div>
 
                         </tbody>
@@ -167,7 +174,7 @@ if ($_POST) {
         </div>
     </main>
 
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/index.js" type="module"></script>
 </body>
 
 </html>
