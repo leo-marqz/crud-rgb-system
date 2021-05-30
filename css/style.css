@@ -276,7 +276,7 @@
     }
     
     .secction-table {
-        max-height: 600px;
+        max-height: 550px;
         overflow: auto;
     }
     /* estilos para Scroll*/
@@ -321,6 +321,48 @@
         padding: 20px 0px;
         color: white;
     }
+    /* modificando los th */
+    
+    .table th:nth-child(1) {
+        width: 5%;
+    }
+    
+    .table th:nth-child(2) {
+        width: 10%;
+    }
+    
+    .table th:nth-child(3) {
+        width: 55%;
+    }
+    
+    .table th:nth-child(4) {
+        width: 10%;
+    }
+    
+    .table th:nth-child(5) {
+        width: 15%;
+    }
+    /* modificando los td */
+    
+    .table td:nth-child(1) {
+        width: 5%;
+    }
+    
+    .table td:nth-child(2) {
+        width: 10%;
+    }
+    
+    .table td:nth-child(3) {
+        width: 55%;
+    }
+    
+    .table td:nth-child(4) {
+        width: 10%;
+    }
+    
+    .table td:nth-child(5) {
+        width: 15%;
+    }
     
     .table td {
         text-align: center;
@@ -353,10 +395,4 @@
         background: rgb(60, 83, 124);
         color: white;
         cursor: pointer;
-    }
-    
-    .empty {
-        width: 100%;
-        font-weight: bold;
-        font-size: 30px;
     }
