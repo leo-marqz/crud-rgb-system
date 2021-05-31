@@ -4,12 +4,12 @@ include("./db.php");
 $con = new ConnectionDB();
 $busqueda = "";
 
-
 $productSave = '<div class="alert success">Producto guardado exitosamente <a class="cerrar" onClick="Cerrar()">X</a></div>';
 $errorProductExists = '<div class="alert danger">Error <br/> Este producto ya existe!! <a class="cerrar" onClick="Cerrar()">X</a></div>';
-$errorInputs = '<div class="alert danger">Error <br/> Los campos estan vacios o ingresaste datos erroneos<a class="cerrar" onClick="Cerrar()">X</a></div>';
-$delete = '<div class="alert success">Producto Eliminado <a class="cerrar" onClick="Cerrar()">X</a></div>';
-$update = '<div class="alert success">Producto Actualizado <a class="cerrar" onClick="Cerrar()">X</a></div>';
+$errorInputs = '<div class="alert danger">Error <br/> Llena el o los campos<a class="cerrar" onClick="Cerrar()">X</a></div>';
+$delete = '<div class="alert warning">Producto Eliminado <a class="cerrar" onClick="Cerrar()">X</a></div>';
+$update = '<div class="alert update">Producto Actualizado <a class="cerrar" onClick="Cerrar()">X</a></div>';
+
 
 
 if ($_POST) {
@@ -46,6 +46,16 @@ if ($_POST) {
         $con->search = $busqueda;
          
     }
+    
+    if(isset($_POST['ejecutar_eliminacion'])){
+        $id_eliminar = $_POST['id_eliminar'];
+        if(empty($id_eliminar)){
+            echo $errorInputs;
+        }else{
+            $con->DeleteProduct($id_eliminar);
+            echo $delete;
+        }
+    }
 }
 
 
@@ -60,7 +70,7 @@ if ($_POST) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shorcut icon" type="image/favicon" href="../images/logo.png" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css" />
     <title>RGB_System</title>
 </head>
 
@@ -89,14 +99,14 @@ if ($_POST) {
         <div class="grid">
             <section>
                 <div class="mini-panel">
-                <h1>INVENTARIO</h1> <a href="./generate_pdf.php" class="btn-1">Generar Reporte PDF</a>
+                <h1>INVENTARIO</h1> <a href="./generate_pdf.php" class="btn-1">Reporte PDF</a>
                 </div>
                 <nav class="nav-search">
-                    <form action="./delete.php" method="POST" class="formulario-eliminar">
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="formulario-eliminar">
                         <div id="ocultar">
                             <input type="number" id="id_eliminar" name="id_eliminar" />
                         </div>
-                        <button type="submit" class="btn-2" id="eliminar">Eliminar</button>
+                        <button type="submit" class="btn-2" name="ejecutar_eliminacion" id="eliminar">Eliminar</button>
                     </form>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="form-search">
                         <input type="search" placeholder="Buscar"  name="buscar" value="<?php echo $busqueda; ?>" autofocus />
@@ -174,7 +184,7 @@ if ($_POST) {
         </div>
     </main>
 
-    <script src="../js/index.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
 </body>
 
 </html>

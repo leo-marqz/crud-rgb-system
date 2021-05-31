@@ -7,17 +7,19 @@
     }
     
     .alert {
-        width: 300px;
-        height: 100px;
+        width: 400px;
+        height: 200px;
+        font-weight: 900;
+        font-size: 22px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        background: rgb(255, 255, 255);
+        padding: 30px;
         position: fixed;
-        top: 50%;
+        top: 40%;
         left: 30%;
-        color: #fff;
-        box-shadow: 2px 2px 10px #000;
+        box-shadow: -2px -2px 4px #000, 7px 7px 7px #000;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
@@ -26,15 +28,25 @@
     }
     
     .success {
-        background: rgb(39, 136, 0);
+        color: rgb(14, 151, 1);
+    
     }
     
     .danger {
-        background: rgb(245, 7, 27);
+        color: rgb(180, 14, 14);
+
+    }
+
+    .update{
+        color:rgb(29, 4, 173);
+    }
+
+    .warning{
+        color:rgb(184, 197, 6);
     }
     
     .cerrar {
-        background: rgb(129, 1, 1);
+        background: rgb(189, 3, 3);
         color: white;
         padding: 10px;
         position: absolute;
@@ -45,6 +57,11 @@
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
+    }
+
+    .cerrar:hover{
+        background: rgb(228, 3, 3);
+        border:2px solid #000;
     }
     
     .form {
@@ -81,10 +98,7 @@
         width: 100%;
         margin-top: 20px;
     }
-    /* #id_producto { */
-    /* display: none; */
-    /* } */
-    
+   
     .form .inputs label {
         font-weight: 500;
         color: rgb(80, 91, 141);
@@ -395,4 +409,10 @@
         background: rgb(60, 83, 124);
         color: white;
         cursor: pointer;
+    }
+
+    .empty{
+        padding: 40px;
+        font-size: 27px;
+        font-weight: 300;
     }

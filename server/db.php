@@ -136,7 +136,7 @@ class ConnectionDB {
                     $x++;
                 }
             }else{
-                echo "<tr class='row'><td colspan='5'>No se a encontrado nada</td> </tr>";
+                echo "<tr class='row'><td colspan='5' class='empty'>No se a encontrado nada</td> </tr>";
             }
         }else{
             $query = "SELECT * FROM rgb_system.inventario;";
